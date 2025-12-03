@@ -41,6 +41,9 @@
 | Fine-tuning(200 samples) | Qwen2.5-VL-3B | 0.76028 | Baseline |
 | Zero-shot | Qwen2.5-VL-3B | 0.81841 | 학습 제거 시 |
 
+![제로샷 캐글 스코어](images/01_zero_shot_qwen25_3b_score.png)
+
+
 학습을 제거했을 때 오히려 성능이 **5.8% 향상**되며 가설이 입증되었습니다. 이후 복잡한 학습 파이프라인 대신 **Zero-shot 기반 모델 선별 전략**으로 전환했습니다.
 
 </details>
@@ -57,6 +60,8 @@
 - T4 환경에서도 3B–7B 모델까지 빠르게 비교 가능
 - 후보 모델을 좁히는 데 핵심 역할
 - 이후 앙상블 포함 모든 실험의 기준점으로 활용
+
+![모델비교 3종](images/02_model_comparison_qwen_blip.png.png)
 
 </details>
 
@@ -97,6 +102,7 @@ T4 환경에서는 메모리 제약으로 인해 모델 체급을 자유롭게 �
 - 입력 해상도: 384 / 512 / 672 / 768 / 896 px
 
 실험 결과, **실제로 서로 다른 문제를 틀리는 유의미한 패턴 차이**가 관찰되었습니다.
+![오답패턴 차이](images/03_pilot300_wrong_answer_analysis.png)
 
 ### 4-2. 오답 패턴 분석 & 자카드 유사도
 
@@ -106,6 +112,8 @@ Pilot300에 대해 각 모델의 오답 리스트를 추출하고, 모델 간 �
 - **유사도 높음** → 동일 문제를 함께 틀림 → 조합 가치 없음
 
 **선정 기준:** (1) 단일 정확도, (2) 오답 패턴 다양성
+
+![정확도, 자카드 유사도 비교](images/04_ensemble_pilot300_similarity_accuracy.png)
 
 ### 4-3. Voting 방식 비교
 
@@ -124,12 +132,12 @@ Soft Voting이 모델의 과신(Overconfidence)을 억제하며 가장 안정적
 ## 📊 Final Result
 
 **Public Leaderboard: Rank 33 / 245 (Top 13%)**
-
-| Method | Score | Improvement |
+![캐글 최종 순위](images/05_final_rank_kaggle_public_score.png)
+| Method | Kaggle Score | Improvement |
 |:---|:---:|:---:|
 | Baseline (Fine-tuned) | 0.76028 | - |
 | Best Single (Qwen3-VL-8B-Instruct) | 0.94804 | +18.8% |
-| **Final Ensemble** | **0.95061** | **+19.0%** |
+| **Final Ensemble** | **0.95007** (public) | **+19.0%** |
 
 ---
 
