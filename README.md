@@ -144,7 +144,7 @@ Soft Voting이 모델의 과신(Overconfidence)을 억제하며 가장 안정적
 ## 📝 Retrospective
 
 <details>
-<summary><b>✅ 성공 요인 (What Worked Well)</b></summary>
+<summary><b>✅ 주요 접근 방식</b></summary>
 
 <br>
 
@@ -157,7 +157,7 @@ Soft Voting이 모델의 과신(Overconfidence)을 억제하며 가장 안정적
 </details>
 
 <details>
-<summary><b>🔍 한계점 및 개선 방향 (Limitations & Future Work)</b></summary>
+<summary><b>🔍 한계점 및 개선 방향</b></summary>
 
 <br>
 
