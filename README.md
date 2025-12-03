@@ -2,7 +2,7 @@
 
 > **Optimizing VQA Inference Pipeline using Large Multi-modal Models**  
 > **Final Result:** Rank **33 / 245 teams (Top 13%)**  
-> **Public Score:** **0.95061**
+> **Public Score:** **0.95007**
 
 ---
 
@@ -173,11 +173,21 @@ Soft Voting이 모델의 과신(Overconfidence)을 억제하며 가장 안정적
 
 ---
 
-## 📂 Directory Structure
+## 📁 Directory Structure
 ```
-추가 예정
+.
+├── 📂 images/                          # 프로젝트 결과 및 시각화 자료 🖼️
+│
+├── 📂 notebooks/                       # 실험 단계별 코드 (00~05)
+│   ├── 📓 00_pilot_data_prep.ipynb              # 파일럿 테스트를 위한 300개 데이터 샘플링
+│   ├── 📓 01_model_selection.ipynb              # pilot_300 기반 후보 모델 성능 비교
+│   ├── 📓 02_zeroshot_inference_qwen2_7b.ipynb  # Qwen2-VL-7B 제로샷 추론
+│   ├── 📓 03_zeroshot_inference_qwen25_7b.ipynb # Qwen2.5-VL-7B 제로샷 추론
+│   ├── 📓 04_zeroshot_inference_qwen3_8b.ipynb  # Qwen3-VL-8B 제로샷 추론 (메인 모델)
+│   └── 📓 05_final_ensemble.ipynb               # 최종 Soft-voting 앙상블 구현
+│
+└── 📝 README.md
 ```
-
 ---
 
 ## ⚠️ Data Disclaimer
